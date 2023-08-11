@@ -1,0 +1,42 @@
+General:
+  Go to filetree: <space> pv
+  Insert at line end: A
+  Insert below: o
+  Insert above: O
+  jump to other brace: %
+Remaps:
+  move selection up: K (in visual)
+  move selection down: K (in visual)
+  paste over selection without copy: <space> p
+  copy to system clipboard: <space> y
+  delete without copy: <space> d
+  format file (?): <space> f
+  next error: crtl + k
+  previous error: crtl + j
+  replace word in file: <space> s
+Window Management:
+  split window vertical: <space> v
+  split window horizontal: <space> h
+  go to left window: alt + h
+  go to right window: alt + l
+  go to upper window: alt + k
+  go to lower window: alt + j
+Telescope:
+  Find File:        <space> pf
+  Find Git File:    crtl + p
+  Search for term   <space> ps
+Harpoon:
+  Add file:         <space> a
+  Open Quick Menu:  crtl + e
+  Open File 1:      crtl + h
+  Open File 2:      crtl + t
+  Open File 3:      crtl + n
+  Open File 4:      crtl + s
+Undotree:
+  Open/Close undotree: <space> u
+LSP:
+  Jump to definition: gd
+  Scroll down in list: crtl + n
+  Scroll up in list: crtl + p
+  Open Hover Window: K
+  
