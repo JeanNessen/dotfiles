@@ -1,0 +1,10 @@
+---
+AlignAfterOpenBracket: AlwaysBreak
+AlignOperands: 'true'
+BreakBeforeBraces: Allman
+Language: Cpp
+PointerAlignment: Left
+IndentWidth: 4
+ColumnLimit: 120
+...
+
