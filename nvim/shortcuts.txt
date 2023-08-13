@@ -1,9 +1,15 @@
 General:
   Go to filetree: <space> pv
   Insert at line end: A
+  use {
+  'nvim-tree/nvim-tree.lua',
+}
   Insert below: o
   Insert above: O
   jump to other brace: %
+  jump to previous location: crtl + o (alt + right)
+  jump to next location: crtl + i (alt + left)
+  save all open buffers: :wa
 Remaps:
   move selection up: K (in visual)
   move selection down: K (in visual)
@@ -14,6 +20,8 @@ Remaps:
   next error: crtl + k
   previous error: crtl + j
   replace word in file: <space> s
+  comment selected lines: <space> c
+  uncomment selected lines: <space> u
 Window Management:
   split window vertical: <space> v
   split window horizontal: <space> h
@@ -24,7 +32,7 @@ Window Management:
 Telescope:
   Find File:        <space> pf
   Find Git File:    crtl + p
-  Search for term   <space> ps
+  Search for term   <space> p:s
 Harpoon:
   Add file:         <space> a
   Open Quick Menu:  crtl + e
@@ -39,4 +47,6 @@ LSP:
   Scroll down in list: crtl + n
   Scroll up in list: crtl + p
   Open Hover Window: K
-  
+  Open Code Action: <space> i
+cpp-tools:
+  Create implementation: crtl + i

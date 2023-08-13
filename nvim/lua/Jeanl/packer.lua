@@ -14,12 +14,27 @@ return require('packer').startup(function(use)
   }
 
   use { "ellisonleao/gruvbox.nvim" }
-
+  use ('navarasu/onedark.nvim')
   use( 'theprimeagen/harpoon')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('mbbill/undotree') 
   use('tpope/vim-fugitive')
-
+  use 'm4xshen/autoclose.nvim'
+  use {
+  'jakemason/ouroboros',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+  use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional
+  },
+}
+use {
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    "Badhi/nvim-treesitter-cpp-tools",
+}
+  use ('mhinz/vim-startify')
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',

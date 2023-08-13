@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle <CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -38,3 +39,16 @@ vim.keymap.set("n", "<A-l>", "<C-w><right>")
 vim.keymap.set("n", "<leader>h", "<C-w>s")
 vim.keymap.set("n", "<leader>v", "<C-w>v")
 
+vim.keymap.set("n", "<A-left>", "<C-o>")
+vim.keymap.set("n", "<A-right>", "<C-i>")
+
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>i", vim.lsp.buf.code_action)
+
+vim.keymap.set("v", "<leader>c", ":'<,'>norm i//<CR>")
+vim.keymap.set("v", "<leader>u", ":'<,'>norm xx<CR>")
+
+vim.keymap.set("n", "<C-i>", "V :'<,'>TSCppDefineClassFunc <CR>")
+vim.keymap.set("v", "<C-i>", ":'<,'>TSCppDefineClassFunc <CR>")
+
+vim.keymap.set("n", "<A-o>", ":Ouroboros<CR>")
