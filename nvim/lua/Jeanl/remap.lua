@@ -52,3 +52,8 @@ vim.keymap.set("n", "<C-i>", "V :'<,'>TSCppDefineClassFunc <CR>")
 vim.keymap.set("v", "<C-i>", ":'<,'>TSCppDefineClassFunc <CR>")
 
 vim.keymap.set("n", "<A-o>", ":Ouroboros<CR>")
+
+vim.keymap.set("n", "<leader>tab", ":tabnew<CR>")
+
+vim.keymap.set("t", "<esc>", "<C-\\><C-N>")
+vim.keymap.set("n", "<leader>db", ":lua require('dapui').toggle() <CR>")

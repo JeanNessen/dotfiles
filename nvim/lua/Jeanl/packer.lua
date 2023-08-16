@@ -20,10 +20,7 @@ return require('packer').startup(function(use)
   use('mbbill/undotree') 
   use('tpope/vim-fugitive')
   use 'm4xshen/autoclose.nvim'
-  use {
-  'jakemason/ouroboros',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+  use 'folke/neodev.nvim'
   use {
   'nvim-tree/nvim-tree.lua',
   requires = {

@@ -48,5 +48,6 @@ LSP:
   Scroll up in list: crtl + p
   Open Hover Window: K
   Open Code Action: <space> i
+  Jump to next snippet entry: strg + f
 cpp-tools:
   Create implementation: crtl + i
