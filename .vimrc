@@ -1,11 +1,46 @@
+let mapleader = " " 
+
 set relativenumber
 set number
 set scrolloff=8
 set ignorecase
+set incsearch
 
-vnoremap("v", "J", ":m '>+1<CR>gv=gv")
-vnoremap("v", "K", ":m '<-2<CR>gv=gv")
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k >:m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
+nnoremap <leader>; mzA;<Esc>`z
+
+vnoremap <leader>y "+y
+
+inoremap jj <Esc>
+
+noremap <leader>f :vsc Manobit.CodeBeautifier.CurrentDocument<CR>
+"map <leader>pf :vsc VAssistX.OpenFileInSolutionDialog<CR>
+map <leader>pf :vsc Edit.GoToAll<CR>
+map <leader>pv :vsc View.SolutionExplorer<CR>
+map <leader>po :vsc View.Output<CR>
+
+vmap <leader>c :vsc VAssistX.SelectionLineComment<CR>
+vmap <leader>u :vsc VAssistX.SelectionLineUncomment<CR>
+nmap <leader>q :vsc VAssistX.RefactorContextMenu<CR>
+nmap gd :vsc VAssistX.GoToImplementation<CR>
+nmap <leader>pd :vsc Edit.PeekDefinition<CR>
+
+"nmap <leader>v :vsc Window.NewVerticalTabGroup<CR>
+
+"xnoremap J :vsc Edit.MoveSelectedLinesDown<CR>=gv
+"xnoremap K :vsc Edit.MoveSelectedLinesUp<CR>=gv
+
+"xnoremap J :'<,'>m .+1<CR>=gv
+"xnoremap K :'<,'>m .-2<CR>=gv
+
+
+" vsvim windows specific settings
 " copied from Vim 7.3's mswin.vim:
 
 " CTRL-X and SHIFT-Del are Cut
@@ -31,11 +66,7 @@ vmap <S-Insert>		<C-V>
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q>		<C-V>
 
-" set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
-behave mswin
-
-" backspace and cursor keys wrap to previous/next line
-set backspace=indent,eol,start whichwrap+=<,>,[,]
+behave xterm
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
@@ -60,3 +91,15 @@ cnoremap <C-A> <C-C>gggH<C-O>G
 onoremap <C-A> <C-C>gggH<C-O>G
 snoremap <C-A> <C-C>gggH<C-O>G
 xnoremap <C-A> <C-C>ggVG
+
+map <C-Left> <C-W>h
+map <C-Right> <C-W>l
+map <C-Up> <C-W>k
+map <C-Down> <C-W>j
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+noremap <leader>v :vsplit<CR>
+noremap <leader>h :split<CR>
+
+map <leader>so :so C:\Users\jeanl\.vimrc<CR>
