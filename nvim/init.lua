@@ -64,6 +64,12 @@ function zk()
     }
 end
 
+function telescope()
+	return {
+		'nvim-telescope/telescope.nvim', tag = '0.1.3',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	}
+end
 
 require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -81,6 +87,9 @@ require("lazy").setup({
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
+    'simrat39/rust-tools.nvim',
+    'nvim-lua/plenary.nvim',
+    telescope(),
     zk(),
 })
 

@@ -3,12 +3,14 @@ vim.g.maplocalleader = ","
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<A-k>", "<C-w><up>")
-vim.keymap.set("n", "<A-j>", "<C-w><down>")
-vim.keymap.set("n", "<A-h>", "<C-w><left>")
-vim.keymap.set("n", "<A-l>", "<C-w><right>")
+vim.keymap.set("n", "<S-k>", "<C-w><up>")
+vim.keymap.set("n", "<S-j>", "<C-w><down>")
+vim.keymap.set("n", "<S-h>", "<C-w><left>")
+vim.keymap.set("n", "<S-l>", "<C-w><right>")
 vim.keymap.set("n", "<leader>h", "<C-w>s")
 vim.keymap.set("n", "<leader>v", "<C-w>v")
+
+vim.keymap.set("i", "jj", "<Esc>")
 
 vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle <CR>")
 
@@ -22,7 +24,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>i", vim.lsp.buf.code_action)
 
