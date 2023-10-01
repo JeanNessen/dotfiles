@@ -89,6 +89,7 @@ require("lazy").setup({
     'hrsh7th/vim-vsnip',
     'simrat39/rust-tools.nvim',
     'nvim-lua/plenary.nvim',
+    'm4xshen/autoclose.nvim',
     telescope(),
     zk(),
 })
