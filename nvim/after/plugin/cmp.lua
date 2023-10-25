@@ -45,7 +45,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp',
-            max_item_count = 5
+            max_item_count = 20
         },
         { name = 'vsnip' }, -- For vsnip users.
     }, {

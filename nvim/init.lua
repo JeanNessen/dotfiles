@@ -37,7 +37,7 @@ function treesitter()
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+                ensure_installed = { "c", "lua", "python", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },  
@@ -71,6 +71,74 @@ function telescope()
 	}
 end
 
+function pythonLSP()
+    return { "neovim/nvim-lspconfig",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim"
+  },
+  config = function()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+    require('mason').setup()
+    local mason_lspconfig = require 'mason-lspconfig'
+    mason_lspconfig.setup {
+        ensure_installed = { "pyright" }
+    }
+
+    local function on_attach_pyright(client, buffer)
+        vim.keymap.set("n", "<c-]>", vim.lsp.buf.definition, keymap_opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, keymap_opts)
+        vim.keymap.set("n", "gD", vim.lsp.buf.implementation, keymap_opts)
+        --vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, keymap_opts)
+        vim.keymap.set("n", "1gD", vim.lsp.buf.type_definition, keymap_opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, keymap_opts)
+        vim.keymap.set("n", "g0", vim.lsp.buf.document_symbol, keymap_opts)
+        vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol, keymap_opts)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, keymap_opts)
+        vim.keymap.set("n", "ga", vim.lsp.buf.code_action, keymap_opts)
+        vim.keymap.set("n", "<leader>fm", ":w<CR>:silent !Black %<CR>")
+    end
+
+    local function on_attach_pylsp(client, buffer)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, keymap_opts)
+    end
+
+    require("lspconfig").pyright.setup {
+        capabilities = capabilities,
+        on_attach = on_attach_pyright,
+
+    }
+    require'lspconfig'.pylsp.setup{
+      settings = {
+        pylsp = {
+          plugins = {
+            pycodestyle = {
+              enabled = false,
+            },
+            mccabe = {
+              enabled = false,
+            },
+            pyflakes = {
+              enabled = false,
+            },
+            flake8 = {
+              enabled = true,
+            },
+          },
+          configurationSources = {'flake8'}
+        }
+      },
+     on_attach = on_attach_pylsp,
+    }
+
+  end
+}
+end
+
+
+
 require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     "folke/which-key.nvim",
@@ -92,6 +160,7 @@ require("lazy").setup({
     'm4xshen/autoclose.nvim',
     telescope(),
     zk(),
+    pythonLSP(),
 })
 
 require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }

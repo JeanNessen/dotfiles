@@ -3,10 +3,10 @@ vim.g.maplocalleader = ","
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<S-k>", "<C-w><up>")
-vim.keymap.set("n", "<S-j>", "<C-w><down>")
-vim.keymap.set("n", "<S-h>", "<C-w><left>")
-vim.keymap.set("n", "<S-l>", "<C-w><right>")
+vim.keymap.set("n", "<C-k>", "<C-w><up>")
+vim.keymap.set("n", "<C-j>", "<C-w><down>")
+vim.keymap.set("n", "<C-h>", "<C-w><left>")
+vim.keymap.set("n", "<C-l>", "<C-w><right>")
 vim.keymap.set("n", "<leader>h", "<C-w>s")
 vim.keymap.set("n", "<leader>v", "<C-w>v")
 
